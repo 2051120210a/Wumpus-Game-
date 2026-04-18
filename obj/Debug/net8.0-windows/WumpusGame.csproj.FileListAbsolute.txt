@@ -12,3 +12,4 @@ C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\refint\WumpusGame
 C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.pdb
 C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.genruntimeconfig.cache
 C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\ref\WumpusGame.dll
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.sourcelink.json

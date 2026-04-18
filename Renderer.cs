@@ -50,14 +50,14 @@ namespace WumpusGame
                     }
 
                     // Nếu ô chưa được thăm
-                    // if (!cell.Visited)
-                    // {
-                    //     if (icons.ContainsKey("X"))
-                    //         g.DrawImage(icons["X"], rect);
-                    //     else
-                    //         g.DrawString("?", new Font("Arial", 24), Brushes.White, rect);
-                    //     continue;
-                    // }
+                    if (!cell.Visited)
+                    {
+                        if (icons.ContainsKey("X"))
+                            g.DrawImage(icons["X"], rect);
+                        else
+                            g.DrawString("?", new Font("Arial", 24), Brushes.White, rect);
+                        continue;
+                    }
 
                     // Vẽ cell trước
                     string symbol = cell.Symbol;

@@ -91,7 +91,7 @@ namespace WumpusGame
 
             renderer.RegisterIcon("P", Image.FromFile("Asset/hole.png"));
             renderer.RegisterIcon("#", new Bitmap(Image.FromFile("Asset/wall_1.png"), new Size(64, 64)));
-            //  renderer.RegisterIcon("X", Image.FromFile("Asset/x.png")); 
+             renderer.RegisterIcon("X", Image.FromFile("Asset/x.png")); 
          
 
             renderer.RegisterIcon("PLAYER_RIGHT", new Bitmap(Image.FromFile("Asset/player_right.png"), new Size(60, 60)));

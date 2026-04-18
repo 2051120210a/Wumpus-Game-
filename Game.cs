@@ -19,10 +19,6 @@ namespace WumpusGame
             // Player bắt đầu ở (0,0)
             player = new Player(0, 0);
 
-            // Wumpus đặt ở một ô trống ngẫu nhiên (không thuộc cột x=0)
-            var (wx, wy) = map.RandomEmptyCell();
-            map.Grid[wx, wy] = new WumpusCell(wx, wy);
-
             running = true;
             playerMoves = 0;
         }
