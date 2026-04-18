@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oAm6FIptbRk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nhanc\\Wumpus.game\\WumpusGame\\WumpusGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nhanc\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\nhanc\\.nuget\\packages\\system.drawing.common\\8.0.0\\system.drawing.common.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

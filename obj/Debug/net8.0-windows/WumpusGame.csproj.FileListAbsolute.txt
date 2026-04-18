@@ -1,0 +1,14 @@
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.AssemblyInfoInputs.cache
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.AssemblyInfo.cs
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.csproj.CoreCompileInputs.cache
+C:\Users\nhanc\Wumpus.game\WumpusGame\bin\Debug\net8.0-windows\WumpusGame.exe
+C:\Users\nhanc\Wumpus.game\WumpusGame\bin\Debug\net8.0-windows\WumpusGame.deps.json
+C:\Users\nhanc\Wumpus.game\WumpusGame\bin\Debug\net8.0-windows\WumpusGame.runtimeconfig.json
+C:\Users\nhanc\Wumpus.game\WumpusGame\bin\Debug\net8.0-windows\WumpusGame.dll
+C:\Users\nhanc\Wumpus.game\WumpusGame\bin\Debug\net8.0-windows\WumpusGame.pdb
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.dll
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\refint\WumpusGame.dll
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.pdb
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\WumpusGame.genruntimeconfig.cache
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0-windows\ref\WumpusGame.dll

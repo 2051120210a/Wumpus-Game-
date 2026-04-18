@@ -1,0 +1,4 @@
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0\WumpusGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0\WumpusGame.AssemblyInfoInputs.cache
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0\WumpusGame.AssemblyInfo.cs
+C:\Users\nhanc\Wumpus.game\WumpusGame\obj\Debug\net8.0\WumpusGame.csproj.CoreCompileInputs.cache
