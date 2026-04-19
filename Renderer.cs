@@ -8,7 +8,7 @@ namespace WumpusGame
    public class Renderer : Control
 {
     private Map map;
-    private Player player; // thêm player
+    private Player player;
     private int cellSize = 64;
     private readonly Dictionary<string, Image> icons = new Dictionary<string, Image>();
 

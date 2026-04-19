@@ -11,7 +11,7 @@ namespace WumpusGame
         public override void OnEnter(Player player)
         {
             Console.WriteLine("Có tường chắn, bạn không thể đi vào!");
-                    GameForm form = Application.OpenForms["GameForm"] as GameForm;
+                    GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowMessage("Có tường chắn, bạn không thể đi vào!");
             player.MoveBack();
         }

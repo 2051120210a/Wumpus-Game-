@@ -10,9 +10,9 @@ namespace WumpusGame
 
         public override void OnEnter(Player player)
         {
-            // Khi bước vào ô Pit, Player chết ngay
+            // Khi bước vào ô Pit, Player chết 
             player.Die("Bạn rơi xuống hố sâu!");
-                                GameForm form = Application.OpenForms["GameForm"] as GameForm;
+                                GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowMessage("Bạn rơi xuống hố sâu!");
         }
 

@@ -34,7 +34,7 @@ namespace WumpusGame
                 }
             }
 
-            GameForm form = Application.OpenForms["GameForm"] as GameForm;
+            GameForm? form = Application.OpenForms["GameForm"] as GameForm;
             if (form != null && !form.justEnteredCell)
 {
             if (hints.Count > 0)

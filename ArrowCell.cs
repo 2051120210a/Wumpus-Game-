@@ -12,7 +12,7 @@ class ArrowCell : Cell
     {
         player.Arrows++;
         Console.WriteLine("Bạn nhặt được một mũi tên!");
-        GameForm form = Application.OpenForms["GameForm"] as GameForm;
+        GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowMessage("Bạn nhặt được một mũi tên!");
 
         // Sau khi nhặt xong, biến ô này thành EmptyCell

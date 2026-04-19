@@ -20,7 +20,7 @@ namespace WumpusGame
             player.Y = ny;
 
             Console.WriteLine($"Bạn bị đưa đến vị trí ({nx},{ny}).");
-                    GameForm form = Application.OpenForms["GameForm"] as GameForm;
+                    GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowMessage("Con dơi đã bắt bạn đi \n" + $"Bạn bị đưa đến vị trí ({nx},{ny}).");
 
             // Sau khi dơi bắt đi, ô này biến thành EmptyCell

@@ -36,7 +36,7 @@ namespace WumpusGame
         public override void OnEnter(Player player)
         {
             player.Die("Bạn bị Wumpus ăn thịt!");
-                    GameForm form = Application.OpenForms["GameForm"] as GameForm;
+                    GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowMessage("Bạn bị Wumpus ăn thịt!");
         }
     }

@@ -133,11 +133,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nhanc\\Wumpus.game\\WumpusGame\\WumpusGame.csproj",
+      "projectUniqueName": "C:\\Users\\nhanc\\WumpusGame\\WumpusGame.csproj",
       "projectName": "WumpusGame",
-      "projectPath": "C:\\Users\\nhanc\\Wumpus.game\\WumpusGame\\WumpusGame.csproj",
+      "projectPath": "C:\\Users\\nhanc\\WumpusGame\\WumpusGame.csproj",
       "packagesPath": "C:\\Users\\nhanc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nhanc\\Wumpus.game\\WumpusGame\\obj\\",
+      "outputPath": "C:\\Users\\nhanc\\WumpusGame\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nhanc\\AppData\\Roaming\\NuGet\\NuGet.Config"

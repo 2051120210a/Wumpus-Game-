@@ -105,7 +105,7 @@ namespace WumpusGame
         {
             while (true)
             {
-                int x = rand.Next(1, Width); // tránh cột x=0
+                int x = rand.Next(Width);
                 int y = rand.Next(Height);
                 if (Grid[x, y] is EmptyCell)
                     return (x, y);

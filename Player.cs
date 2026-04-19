@@ -62,7 +62,7 @@ namespace WumpusGame
             // Kích hoạt hiệu ứng của cell
             map.Grid[X, Y].OnEnter(this);
 
-            GameForm form = Application.OpenForms["GameForm"] as GameForm;
+            GameForm? form = Application.OpenForms["GameForm"] as GameForm;
             form?.renderer.RefreshMap();
         }
 
@@ -77,7 +77,7 @@ namespace WumpusGame
             if (Arrows <= 0)
             {
                 Console.WriteLine("Bạn đã hết tên!");
-            GameForm form = Application.OpenForms["GameForm"] as GameForm;
+            GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowMessage("Bạn đã hết tên!");
                 return;
             }
@@ -98,7 +98,7 @@ namespace WumpusGame
                 if (map.Grid[nx, ny] is WumpusCell)
                 {
                     Console.WriteLine("Bạn đã bắn trúng Wumpus!");
-                GameForm form = Application.OpenForms["GameForm"] as GameForm;
+                GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowAction("Bạn đã bắn trúng Wumpus!");
                     // Thay thế Wumpus bằng EmptyCell
                     map.ReplaceCell(nx, ny, new EmptyCell(nx, ny));
@@ -106,7 +106,7 @@ namespace WumpusGame
                 else
                 {
                     Console.WriteLine("Tên đã bắn trượt...");
-        GameForm form = Application.OpenForms["GameForm"] as GameForm;
+        GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowAction("Tên đã bắn trượt...");
 
                 }
@@ -114,7 +114,7 @@ namespace WumpusGame
             else
             {
                 Console.WriteLine("Tên bay ra ngoài bản đồ...");
-        GameForm form = Application.OpenForms["GameForm"] as GameForm;
+        GameForm? form = Application.OpenForms["GameForm"] as GameForm;
         form?.ShowMessage("Tên bay ra ngoài bản đồ...");
             }
         }
