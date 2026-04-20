@@ -14,6 +14,8 @@ namespace WumpusGame
         private Label lblStatus;  
         private Label lblAction;
         private Button btnRestart;
+        private PictureBox pbVictory;
+        private PictureBox pbGameOver;
         public bool justEnteredCell = false;
 
         public GameForm()
@@ -104,6 +106,7 @@ namespace WumpusGame
                             ShowMessage("Bạn thắng trò chơi!");
                             this.KeyDown -= GameForm_KeyDown;
                             ShowVictory();
+                            
                             return;
                         }
         
@@ -122,6 +125,7 @@ namespace WumpusGame
             this.Controls.Add(btnRestart);
             btnRestart.BringToFront();
         }
+
             private void RestartGame()
         {
             if (btnRestart != null)
@@ -145,6 +149,20 @@ namespace WumpusGame
             lblAction.Text = "";
             UpdateStatus();
 
+            if (pbVictory != null)
+            {
+                this.Controls.Remove(pbVictory);
+                pbVictory.Dispose();
+                pbVictory = null;
+            }
+
+            if (pbGameOver != null)
+            {
+                this.Controls.Remove(pbGameOver);
+                pbGameOver.Dispose();
+                pbGameOver = null;
+            }
+
             // Bật lại control
             this.KeyDown += GameForm_KeyDown;
 
@@ -154,7 +172,7 @@ namespace WumpusGame
         private void ShowVictory()
         {
             // Tạo PictureBox hiển thị hình chiến thắng
-            PictureBox pbVictory = new PictureBox();
+            pbVictory = new PictureBox();
             pbVictory.Image = new Bitmap(Image.FromFile("Asset/victory.png"), new Size(350, 350));
             pbVictory.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -174,7 +192,7 @@ namespace WumpusGame
 
         private void ShowGameOver()
         {
-            PictureBox pbGameOver = new PictureBox();
+            pbGameOver = new PictureBox();
             pbGameOver.Image = new Bitmap(Image.FromFile("Asset/game_over.png"), new Size(350, 350));
             pbGameOver.SizeMode = PictureBoxSizeMode.StretchImage;
 
