@@ -32,7 +32,7 @@ namespace WumpusGame
             Random rand = new Random();
             while (true)
             {
-                int x = rand.Next(1, Map.Instance.Width); // tránh cột x=0
+                int x = rand.Next(Map.Instance.Width); 
                 int y = rand.Next(Map.Instance.Height);
 
                 if (Map.Instance.Grid[x, y] is EmptyCell cell)
