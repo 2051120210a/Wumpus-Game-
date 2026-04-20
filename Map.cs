@@ -89,6 +89,8 @@ namespace WumpusGame
                     }
                 }
 
+                Grid[0, 0] = new EmptyCell(0,0);
+
                 while (wumpusCount < 3)
                 {
                     var (wx, wy) = RandomEmptyCell();
