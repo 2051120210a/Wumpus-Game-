@@ -17,15 +17,13 @@ namespace WumpusGame
         this.map = map;
         this.player = player;
         this.DoubleBuffered = true;
+        this.icons = AssetManager.Icons;
         this.Width = map.Width * cellSize;
         this.Height = map.Height * cellSize;
     }
 
-    public void RegisterIcon(string symbol, Image icon)
-    {
-        icons[symbol] = icon;
-    }
 
+    
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

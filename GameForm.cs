@@ -13,6 +13,7 @@ namespace WumpusGame
         private Label lblMessage;
         private Label lblStatus;  
         private Label lblAction;
+        private Button btnRestart;
         public bool justEnteredCell = false;
 
         public GameForm()
@@ -53,52 +54,11 @@ namespace WumpusGame
         lblAction.Font = new Font("Arial", 10, FontStyle.Italic);
         this.Controls.Add(lblAction);
 
-
+        AssetManager.Load();
         UpdateStatus();
         ShowMessage("=== Wumpus Game === \n"+"Game Start");
-
-
-            // Đăng ký icon
-            renderer.RegisterIcon(".", Image.FromFile("Asset/empty.png"));
-            Image emptyImg = Image.FromFile("Asset/empty.png");
-            Image arrowImg = Image.FromFile("Asset/arrow.png");
-
-            Bitmap combinedArrow = new Bitmap(emptyImg.Width, emptyImg.Height);
-            using (Graphics g = Graphics.FromImage(combinedArrow))
-            {
-                g.DrawImage(emptyImg, 0, 0);
-                g.DrawImage(arrowImg, 0, 0);
-            }
-            renderer.RegisterIcon("A", combinedArrow);
-
-            Image wumpusImg = new Bitmap(Image.FromFile("Asset/wumpus.png"), new Size(60, 60));
-            Bitmap combinedWumpus = new Bitmap(emptyImg.Width, emptyImg.Height);
-            using (Graphics g = Graphics.FromImage(combinedWumpus))
-            {
-                g.DrawImage(emptyImg, 0, 0);
-                g.DrawImage(wumpusImg, 0, 0);
-            }
-            renderer.RegisterIcon("W", combinedWumpus);
-
-            Image batImg = new Bitmap(Image.FromFile("Asset/bat.png"), new Size(60, 60));
-            Bitmap combinedBat = new Bitmap(emptyImg.Width, emptyImg.Height);
-            using (Graphics g = Graphics.FromImage(combinedBat))
-            {
-                g.DrawImage(emptyImg, 0, 0);
-                g.DrawImage(batImg, 0, 0);
-            }
-            renderer.RegisterIcon("B", combinedBat);
-
-            renderer.RegisterIcon("P", Image.FromFile("Asset/hole.png"));
-            renderer.RegisterIcon("#", new Bitmap(Image.FromFile("Asset/wall_1.png"), new Size(64, 64)));
-             renderer.RegisterIcon("X", Image.FromFile("Asset/x.png")); 
-         
-
-            renderer.RegisterIcon("PLAYER_RIGHT", new Bitmap(Image.FromFile("Asset/player_right.png"), new Size(60, 60)));
-            renderer.RegisterIcon("PLAYER_LEFT",  new Bitmap(Image.FromFile("Asset/player_left.png"),  new Size(60, 60)));
-            renderer.RegisterIcon("PLAYER_DOWN",  new Bitmap(Image.FromFile("Asset/player_down.png"),  new Size(60, 60)));
-            renderer.RegisterIcon("PLAYER_UP",    new Bitmap(Image.FromFile("Asset/player_up.png"),    new Size(60, 60)));
         }   
+
 
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -122,33 +82,74 @@ namespace WumpusGame
         }
 
 
-public void ShowMessage(string msg) { lblMessage.Text = msg; }
-public void ShowAction(string msg) { lblAction.Text = msg; }
+        public void ShowMessage(string msg) { lblMessage.Text = msg; }
+        public void ShowAction(string msg) { lblAction.Text = msg; }
 
 
-        private void UpdateStatus()
-            {
-         int wumpusCount = 0;
-            foreach (var cell in map.Grid)
-            {
-                if (cell is WumpusCell) wumpusCount++;
-            }
+                private void UpdateStatus()
+                    {
+                int wumpusCount = 0;
+                    foreach (var cell in map.Grid)
+                    {
+                        if (cell is WumpusCell) wumpusCount++;
+                    }
 
-            lblStatus.Text ="Điều khiển: W/A/S/D để đổi hướng hoặc di chuyển, SPACE để bắn tên\n"+ 
-                            $"Arrow remain: {player.Arrows} " +
-                            $"| Wumpus remain: {wumpusCount} " +
-                            $"| Player Move: {player.playerMoves}";
+                    lblStatus.Text ="Điều khiển: W/A/S/D để đổi hướng hoặc di chuyển, SPACE để bắn tên\n"+ 
+                                    $"Arrow remain: {player.Arrows} " +
+                                    $"| Wumpus remain: {wumpusCount} " +
+                                    $"| Player Move: {player.playerMoves}";
 
-                    if (wumpusCount == 0)
-                {
-                     ShowMessage("Bạn thắng trò chơi!");
-                    this.KeyDown -= GameForm_KeyDown;
-                    ShowVictory();
-                    return;
-                }
-  
-            }
+                            if (wumpusCount == 0)
+                        {
+                            ShowMessage("Bạn thắng trò chơi!");
+                            this.KeyDown -= GameForm_KeyDown;
+                            ShowVictory();
+                            return;
+                        }
+        
+                    }
 
+
+        private void ShowRestartButton()
+        {
+            btnRestart = new Button();
+            btnRestart.Text = "Restart Game";
+            btnRestart.Size = new Size(150, 50);
+            btnRestart.Location = new Point(lblAction.Left + 200, lblAction.Bottom + 450);
+
+            btnRestart.Click += (s, e) => RestartGame();
+
+            this.Controls.Add(btnRestart);
+            btnRestart.BringToFront();
+        }
+            private void RestartGame()
+        {
+            if (btnRestart != null)
+                this.Controls.Remove(btnRestart);
+
+            // Reset dữ liệu game
+            map = new Map(8, 15);
+            player = new Player(0, 0);
+
+            map.Grid[player.X, player.Y].OnEnter(player);
+
+            // Reset renderer
+            this.Controls.Remove(renderer);
+            renderer = new Renderer(map, player);
+            renderer.Location = new Point(0, 0);
+            renderer.Size = new Size(960, 512);
+            this.Controls.Add(renderer);
+
+            // Reset label
+            lblMessage.Text = "";
+            lblAction.Text = "";
+            UpdateStatus();
+
+            // Bật lại control
+            this.KeyDown += GameForm_KeyDown;
+
+            ShowMessage("=== Game Restarted ===");
+        }
 
         private void ShowVictory()
         {
@@ -167,6 +168,7 @@ public void ShowAction(string msg) { lblAction.Text = msg; }
             // Thêm vào Form chính
             this.Controls.Add(pbVictory);
             pbVictory.BringToFront();
+            ShowRestartButton();
         }
 
 
@@ -181,6 +183,7 @@ public void ShowAction(string msg) { lblAction.Text = msg; }
 
             this.Controls.Add(pbGameOver);
             pbGameOver.BringToFront();
+            ShowRestartButton();
         }
 
 
