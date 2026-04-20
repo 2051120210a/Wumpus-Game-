@@ -10,7 +10,10 @@ namespace WumpusGame
         public int Height { get; }
         public Cell[,] Grid { get; }
         private Random rand = new Random();
-
+            public Map()
+            {
+                Instance = this;
+            }
         public Map(int width, int height)
         {
             Width = width;

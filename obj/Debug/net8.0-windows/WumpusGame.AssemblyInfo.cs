@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WumpusGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f43f40b2254228c07e91acf5247e688eaa40cf3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e501abf1bc0b25acc5fbb5be36c36ae23c0880dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("WumpusGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WumpusGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

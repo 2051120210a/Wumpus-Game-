@@ -11,7 +11,7 @@ namespace WumpusGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new GameForm()); // chạy form chính
+            Application.Run(new GameForm());
         }
     }
 }
