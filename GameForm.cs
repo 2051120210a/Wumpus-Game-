@@ -150,35 +150,39 @@ public void ShowAction(string msg) { lblAction.Text = msg; }
             }
 
 
-                private void ShowVictory()
+        private void ShowVictory()
         {
-            Form form = new Form();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Size = new Size(400, 300);
+            // Tạo PictureBox hiển thị hình chiến thắng
+            PictureBox pbVictory = new PictureBox();
+            pbVictory.Image = new Bitmap(Image.FromFile("Asset/victory.png"), new Size(350, 350));
+            pbVictory.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            PictureBox pb = new PictureBox();
-            pb.Image = new Bitmap(Image.FromFile("Asset/victory.png"), new Size(350, 350));
-            pb.SizeMode = PictureBoxSizeMode.CenterImage;
-            pb.Dock = DockStyle.Fill;
+            // Lấy vị trí lblAction và đặt PictureBox cách 200px phía dưới
+            int x = lblAction.Left + 100;
+            int y = lblAction.Bottom + 50;
 
-            form.Controls.Add(pb);
-            form.ShowDialog();
+            pbVictory.Location = new Point(x, y);
+            pbVictory.Size = new Size(350, 350);
+
+            // Thêm vào Form chính
+            this.Controls.Add(pbVictory);
+            pbVictory.BringToFront();
         }
 
+
         private void ShowGameOver()
-            {
-                Form form = new Form();
-                form.StartPosition = FormStartPosition.CenterScreen;
-                form.Size = new Size(400, 300);
+        {
+            PictureBox pbGameOver = new PictureBox();
+            pbGameOver.Image = new Bitmap(Image.FromFile("Asset/game_over.png"), new Size(350, 350));
+            pbGameOver.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                PictureBox pb = new PictureBox();
-                pb.Image = new Bitmap(Image.FromFile("Asset/game_over.png"), new Size(350, 350));
-                pb.SizeMode = PictureBoxSizeMode.CenterImage;
-                pb.Dock = DockStyle.Fill;
+            pbGameOver.Location = new Point(lblAction.Left + 100, lblAction.Bottom + 50);
+            pbGameOver.Size = new Size(350, 350);
 
-                form.Controls.Add(pb);
-                form.ShowDialog();
-            }
+            this.Controls.Add(pbGameOver);
+            pbGameOver.BringToFront();
+        }
+
 
     }
 }
