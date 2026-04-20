@@ -78,7 +78,7 @@ namespace WumpusGame
                     }
                 }
 
-                // Đảm bảo có ít nhất 2 Wumpus
+                // Đảm bảo có ít nhất 3 Wumpus
                 int wumpusCount = 0;
                 for (int x = 0; x < Width; x++)
                 {
@@ -89,14 +89,23 @@ namespace WumpusGame
                     }
                 }
 
-                while (wumpusCount < 2)
+                while (wumpusCount < 3)
                 {
                     var (wx, wy) = RandomEmptyCell();
                     Grid[wx, wy] = new WumpusCell(wx, wy);
                     wumpusCount++;
                 }
                 Grid[0, 0].Visited = true;
+                while (wumpusCount > 7)
+                {
+                    var (wx, wy) = RandomWumpusCell();
+                    Grid[wx, wy] = new EmptyCell(wx, wy);
+                    wumpusCount--;
+                }
+                Grid[0, 0].Visited = true;
             }
+
+            
 
 
         public bool IsInside(int x, int y)
@@ -111,6 +120,16 @@ namespace WumpusGame
                 int x = rand.Next(Width);
                 int y = rand.Next(Height);
                 if (Grid[x, y] is EmptyCell)
+                    return (x, y);
+            }
+        }
+                public (int, int) RandomWumpusCell()
+        {
+            while (true)
+            {
+                int x = rand.Next(Width);
+                int y = rand.Next(Height);
+                if (Grid[x, y] is WumpusCell)
                     return (x, y);
             }
         }

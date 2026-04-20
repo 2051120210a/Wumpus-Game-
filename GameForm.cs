@@ -18,7 +18,7 @@ namespace WumpusGame
         public GameForm()
         {
         this.Text = "Wumpus Game";
-        this.ClientSize = new Size(1200, 512); 
+        this.WindowState = FormWindowState.Maximized;
         this.KeyPreview = true;
         this.KeyDown += GameForm_KeyDown;
         this.Name = "GameForm";
